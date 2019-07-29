@@ -15,26 +15,8 @@ public class App
     public static void main( String[] args ) {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
 
-        Movie movie= (Movie) applicationContext.getBean("movie1");
+        Movie movie=applicationContext.getBean(Movie.class);
         System.out.println(movie);
-
-        Movie movie1= (Movie) applicationContext.getBean("movie2");
-        System.out.println(movie1);
-
-        Movie movie12=applicationContext.getBean("movie2",Movie.class);
-        System.out.println(movie1==movie12);
-
-
-        Movie movie2= (Movie) applicationContext.getBean("movie3");
-        System.out.println(movie2);
-
-        Movie movie3=applicationContext.getBean("movie3",Movie.class);
-        System.out.println(movie3);
-
-        Movie movie4=applicationContext.getBean("movie4",Movie.class);
-        System.out.println(movie3==movie4);
-
-
 
 
 

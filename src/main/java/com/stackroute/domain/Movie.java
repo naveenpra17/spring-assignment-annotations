@@ -13,14 +13,14 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-//@Component
+@Component
 public class Movie {
     private Actor actor;
 //    private String movieName;
 
     public Movie() {
     }
-    @Autowired
+
     public Movie(Actor actor) {
         this.actor = actor;
     }
@@ -28,7 +28,8 @@ public class Movie {
     public Actor getActor() {
         return actor;
     }
-
+    @Autowired
+    @Qualifier(value = "naveenpra")
     public void setActor(Actor actor) {
         this.actor = actor;
     }
