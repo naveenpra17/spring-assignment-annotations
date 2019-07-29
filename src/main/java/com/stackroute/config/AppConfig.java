@@ -2,6 +2,7 @@ package com.stackroute.config;
 
 import com.stackroute.domain.Actor;
 import com.stackroute.domain.BeanLifecycleDemoBean;
+import com.stackroute.domain.BeanPostProcessorDemoBean;
 import com.stackroute.domain.Movie;
 //import org.graalvm.compiler.lir.LIRInstruction;
 import org.springframework.context.annotation.Bean;
@@ -29,13 +30,18 @@ public class AppConfig {
         return actor2;
     }
 
-   @Bean
+   @Bean(name="beanLifecycleDemoBean")
     public BeanLifecycleDemoBean beanLifecycleDemoBean()
    {
        BeanLifecycleDemoBean bean=new BeanLifecycleDemoBean();
    return bean;
    }
 
+    @Bean(name="beanPostProcessorDemoBean")
+    public BeanPostProcessorDemoBean beanPostProcessorDemoBean(){
+        BeanPostProcessorDemoBean beanPostProcessorDemoBean=new BeanPostProcessorDemoBean();
+        return beanPostProcessorDemoBean;
+    }
 
 
 

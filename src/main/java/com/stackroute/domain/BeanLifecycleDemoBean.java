@@ -11,6 +11,7 @@ import javax.annotation.PreDestroy;
 
 public class BeanLifecycleDemoBean implements InitializingBean, DisposableBean {
     ApplicationContext applicationContext;
+
     public String getMessage() {
         return message;
     }
@@ -20,23 +21,27 @@ public class BeanLifecycleDemoBean implements InitializingBean, DisposableBean {
     }
 
     private String message;
+
     @Override
     public void afterPropertiesSet() throws Exception {//called automatically after bean is created
-        System.out.println("bean initi  alised "+message);
+//        System.out.println("bean initi  alised "+message);
     }
+
     @Override
     public void destroy() throws Exception {  //called automatically after bean is destroyed
-        System.out.println("beans destroyyed");
+//        System.out.println("beans destroyyed");
     }
     @PostConstruct
-    public void customInit(){ //custom init method
+    public void customInit() { //custom init method
 
-        System.out.println("this is a custom message");
-    }
-        @PreDestroy
-        public void customDestroy(){  //custom destroy method
-      System.out.println("custome cleanup");
+//        System.out.println("this is a custom message");
     }
 
+    @PreDestroy
+    public void customDestroy() {  //custom destroy method
+//      System.out.println("custome cleanup");
+//    }
 
+
+    }
 }

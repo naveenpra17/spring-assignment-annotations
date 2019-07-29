@@ -15,10 +15,11 @@ public class App
 {
     public static void main( String[] args ) {
         ConfigurableApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
-
-        Movie movie=(Movie) applicationContext.getBean("movieComponent");
-        System.out.println(movie);
-        applicationContext.close();
+        BeanLifecycleDemoBean beanLifecycleDemoBean=applicationContext.getBean("beanLifecycleDemoBean",BeanLifecycleDemoBean.class);
+        BeanPostProcessorDemoBean beanPostProcessorDemoBean=applicationContext.getBean("beanPostProcessorDemoBean",BeanPostProcessorDemoBean.class);
+//        Movie movie=(Movie) applicationContext.getBean("movieComponent");
+//        System.out.println(movie);
+//        applicationContext.close();
 
 //       Actor actor1=(Actor) applicationContext.getBean("actorBean1");
 //        Actor actor2=(Actor) applicationContext.getBean("actorBean2");
