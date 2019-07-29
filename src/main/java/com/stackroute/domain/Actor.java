@@ -7,9 +7,9 @@ import org.springframework.stereotype.Component;
 
 public class Actor {
 
-   private String actor;
-   private String gender;
-   private  int age;
+    private String actor;
+    private String gender;
+    private int age;
 
     public Actor(String actor, String gender, int age) {
         this.actor = actor;
@@ -17,9 +17,14 @@ public class Actor {
         this.age = age;
     }
 
-    public Actor(){
+    public Actor() {
 
     }
+
+    public String getActor() {
+        return actor;
+    }
+
     public void setActor(String actor) {
         this.actor = actor;
     }
@@ -33,12 +38,13 @@ public class Actor {
     }
 
     public int getAge() {
-        return 17;
+        return age;
     }
 
     public void setAge(int age) {
         this.age = age;
     }
+
     @Override
     public String toString() {
         return "Actor{" +
