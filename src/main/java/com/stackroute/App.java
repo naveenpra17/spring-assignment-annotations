@@ -3,6 +3,7 @@ package com.stackroute;
 import com.stackroute.config.AppConfig;
 import com.stackroute.domain.*;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Scope;
 
@@ -13,10 +14,19 @@ import org.springframework.context.annotation.Scope;
 public class App 
 {
     public static void main( String[] args ) {
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+        ConfigurableApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
 
         Movie movie=(Movie) applicationContext.getBean("movieComponent");
         System.out.println(movie);
+        applicationContext.close();
+
+//       Actor actor1=(Actor) applicationContext.getBean("actorBean1");
+//        Actor actor2=(Actor) applicationContext.getBean("actorBean2");
+//
+//
+//        System.out.println(actor1);
+//        System.out.println(actor2);
+
 
 
 

@@ -1,7 +1,9 @@
 package com.stackroute.config;
 
 import com.stackroute.domain.Actor;
+import com.stackroute.domain.BeanLifecycleDemoBean;
 import com.stackroute.domain.Movie;
+//import org.graalvm.compiler.lir.LIRInstruction;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -12,8 +14,7 @@ import org.springframework.stereotype.Component;
 @Configuration
 
 @ComponentScan(basePackages = "com.stackroute.domain")
-public class AppConfig
-{
+public class AppConfig {
 
 
     @Bean
@@ -27,6 +28,14 @@ public class AppConfig
         Actor actor2 = new Actor("naveenpra", "male", 27);
         return actor2;
     }
+
+   @Bean
+    public BeanLifecycleDemoBean beanLifecycleDemoBean()
+   {
+       BeanLifecycleDemoBean bean=new BeanLifecycleDemoBean();
+   return bean;
+   }
+
 
 
 
