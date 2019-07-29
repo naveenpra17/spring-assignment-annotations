@@ -11,19 +11,21 @@ import org.springframework.stereotype.Component;
 
 @Configuration
 
-@ComponentScan(basePackages = "com.stackroute")
-public class AppConfig {
+@ComponentScan(basePackages = "com.stackroute.domain")
+public class AppConfig
+{
 
-    @Bean(name="naveen")
-    public Actor actorBean() {
-        Actor actor = new Actor("naveen", "male", 17);
-        return actor;
+
+    @Bean
+    public Actor actor() {
+        Actor actor1 = new Actor("naveen", "male", 17);
+        return actor1;
     }
 
-    @Bean(name="naveenpra")
+    @Bean
     public Actor actorBean1() {
-        Actor actor = new Actor("naveenpra", "male", 27);
-        return actor;
+        Actor actor2 = new Actor("naveenpra", "male", 27);
+        return actor2;
     }
 
 
